@@ -1,6 +1,6 @@
 .movies{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 20px;
 }
 
@@ -13,4 +13,10 @@
   display:flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+.movies{
+  grid-template-columns: 1fr 1fr;
+}
 }

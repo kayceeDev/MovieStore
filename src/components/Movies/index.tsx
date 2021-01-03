@@ -18,7 +18,7 @@ type Movie = {
 };
 
 const API_KEY = "6e7708f4";
-const series = ["avengers", "fast and furious", "iron man", "harry potter"];
+const series = ["avengers", "fast and furious", "iron man", "harry potter",'batman'];
 
 const Movies: React.FC<Props> = (props) => {
   useEffect(() => {

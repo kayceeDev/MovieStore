@@ -1,19 +1,25 @@
-import React from 'react';
-import './style.css'
+import React from "react";
+import "./style.css";
 
-type Props={
-  title:string
-  year:string
-  image:string
-}
-const Movie: React.FC<Props> = (props) =>{
+const url =
+  "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png";
 
-  return <div className='movie' key={props.title}>
-      <h2>{props.title}</h2>
-      <img src={props.image} alt={props.title}/>
-      <h3>{props.year}</h3>
-      
+type Props = {
+  title: string;
+  year: string;
+  image: string;
+};
+const Movie: React.FC<Props> = (props) => {
+  return (
+    <div className="movie" key={props.title}>
+      {/* <h2>{props.title}</h2> */}
+      <img src={props.image === "N/A" ? url : props.image} alt={props.title} />
+      <div className="movie-info">
+        <h4 className="title">{props.title}</h4>
+        <p>{props.year}</p>
+      </div>
     </div>
+  );
 };
 
-export default Movie; 
+export default Movie;

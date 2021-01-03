@@ -1,11 +1,43 @@
+:root {
+
+  --clr-white: #fff;
+  --transition: all 0.3s linear;
+}
+
 .movie {
   display:flex;
   flex-direction: column;
   flex: 0 0 21%;
-  margin: 2%;
+  margin: 3%;
+  position: relative;
+  overflow: hidden;
 }
 
-img{
+.movie img {
   width: 100%;
-  height: auto;
+  height: 400px;
+  display: block;
+  object-fit: cover;
 }
+
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(100%);
+  transition: var(--transition);
+}
+.movie-info h4 {
+  color: var(--clr-white);
+  margin-bottom: 0.25rem;
+}
+.movie-info p {
+  margin-bottom: 0;
+  color: var(--clr-white);
+}
+.movie:hover .movie-info {
+  transform: translateY(0);
+} 
