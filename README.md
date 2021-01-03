@@ -1,3 +1,11 @@
+## Project Title : Our MovieStore
+
+## Project summary
+Our Movie Store is a website that helps movie loves take a peek at the summary of a movie they are interested in before diving right in to watch the movie if the find it interesting.
+
+<b>It is still work in progress and anyone who is interested in making it better is welcome to collaborate</b>
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
