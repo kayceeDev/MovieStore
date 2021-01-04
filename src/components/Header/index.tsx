@@ -79,6 +79,7 @@ const Header: React.FC<Props> = (props) => {
   const styles = useStyles();
 const [inputVal, setInputVal] = useState<string>('')
 
+// function takes in a string and filters the movie array with it
 function updateMovies(search: string){
   setInputVal(search )
   props.setMovies(props.movies.filter((movie:any) => movie.title.toLowerCase().includes(search)))

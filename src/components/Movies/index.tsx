@@ -17,7 +17,8 @@ type Movie = {
   year: string;
 };
 
-const API_KEY = "6e7708f4";
+const API_KEY = process.env.REACT_APP_MOVIE_API_KEY ;
+
 const series = ["avengers", "fast and furious", "iron man", "harry potter",'batman'];
 
 const Movies: React.FC<Props> = (props) => {
@@ -28,8 +29,9 @@ const Movies: React.FC<Props> = (props) => {
           series
         )}&apikey=${API_KEY}&page=2`
       ).then((res) => res.json());
+      
     });
-
+    // console.log(promises)
     Promise.all(promises).then((movies: any) => {
       const updatedMovies: Movie[] = movies
         .map((movie: any) => movie.Search)
@@ -44,7 +46,7 @@ const Movies: React.FC<Props> = (props) => {
       props.setMovies(updatedMovies);
       props.setTempMovies(updatedMovies);
     });
-  }, []);
+  });
 
   if (props.movies.length === 0) {
     return (
