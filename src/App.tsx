@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Header from "./components/Header";
 import Movies from "./components/Movies";
@@ -17,10 +18,14 @@ const App: React.FC = () => {
 
 
   return (
-    <div className="App">
+    <Router>
+       <Switch>
+      <Route path='/' exact>
       <Header movies={movies} setMovies={setTempMovies} />
       <Movies movies={tempMovies} setMovies={setMovies} setTempMovies={setTempMovies} />
-    </div>
+    </Route>
+    </Switch>
+    </Router>
   );
 };
 
