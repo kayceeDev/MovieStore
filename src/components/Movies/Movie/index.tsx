@@ -13,15 +13,13 @@ type Props = {
 const Movie: React.FC<Props> = (props) => {
 
   return (
-    <Link to='#' key={props.title} className='movie'>
-    <article>
+    <Link to='#' className='movie'>
       {/* <h2>{props.title}</h2> */}
       <img src={props.image === "N/A" ? url : props.image} alt={props.title} />
       <div className="movie-info">
         <h4 className="title">{props.title}</h4>
         <p>{props.year}</p>
       </div>
-      </article>
     </Link>
   );
 };

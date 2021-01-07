@@ -20,7 +20,7 @@ import {
   Theme,
   createStyles,
 } from "@material-ui/core/styles";
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -80,10 +80,11 @@ const Header: React.FC<Props> = (props) => {
 const [inputVal, setInputVal] = useState<string>('')
 
 // function takes in a string and filters the movie array with it
-function updateMovies(search: string){
+const updateMovies = (search: string)=>{
   setInputVal(search )
   props.setMovies(props.movies.filter((movie:any) => movie.title.toLowerCase().includes(search)))
 }
+
 
   return (
     <div className={styles.grow}>
@@ -95,7 +96,7 @@ function updateMovies(search: string){
           <Typography variant="h6" noWrap>
             Our Movie Store
           </Typography>
-          <div className={styles.search}>
+          <div className={styles.search} onSubmit={e=>e.preventDefault()}>
             <div className={styles.searchIcon}>
               <SearchIcon />
             </div>
@@ -106,7 +107,7 @@ function updateMovies(search: string){
                 root: styles.inputRoot,
                 input: styles.inputInput,
               }}
-              onChange={e=>updateMovies(e.target.value)}
+              onChange={(e) =>updateMovies(e.target.value)}
               value={inputVal}
             />
           </div>

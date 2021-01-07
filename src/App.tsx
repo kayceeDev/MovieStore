@@ -14,18 +14,18 @@ type Movie= {
 
 const App: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([])
-  const [tempMovies, setTempMovies] = useState<Movie[]>([])
+  // const [tempMovies, setTempMovies] = useState<Movie[]>([])
 
 
   return (
     <Router>
        <Switch>
       <Route path='/' exact>
-      <Header movies={movies} setMovies={setTempMovies} />
-      <Movies movies={tempMovies} setMovies={setMovies} setTempMovies={setTempMovies} />
+      <Header movies={movies} setMovies={setMovies} />
+      <Movies movies={movies} setMovies={setMovies}  />
     </Route>
-    </Switch>
-    </Router>
+     </Switch>
+     </Router> 
   );
 };
 
